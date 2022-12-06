@@ -1,0 +1,36 @@
+<section class="main-page">
+ <div class="box">
+  <!-- delete btn -->
+  <button class="btn btn-danger" (click)="deleteImg()" [disabled]="AllImg.length == 0">x</button>
+  <!-- img area -->
+   <div class="img-area">
+    <img onerror="this.src='../../../assets/defaultimg.jpg'" src="{{imgInformation}}" alt="" >
+    <!-- div prev and next btn -->
+
+    <div class="action-btn">
+      <div class="prev ">
+        <button class="btn-action" (click)="prev()" [disabled]="!imgInformation || indexImg == 0">
+          <fa-icon [icon]="faArrowCircleLeft"></fa-icon>
+        </button>
+      </div>
+      <div class="next">
+        <button class="btn-action" (click)="next()" [disabled]="!imgInformation || indexImg == (AllImg.length - 1)">
+          <fa-icon [icon]="faArrowCircleRight"  ></fa-icon>
+        </button>
+      </div>
+    </div>
+   </div>
+  <!-- add img area -->
+  <div class="add-img">
+   <!-- add btn -->
+  <div class="add-btn" >
+    <label for="add" class="btn btn-success" style="height:60px;">
+      <fa-icon [icon]="faPlus" *ngIf="AllImg.length < 5"></fa-icon>
+    </label>
+
+    <img *ngFor="let image of AllImg; let index = index" (click)="getImg(index)" src="{{image}}" alt="img" style="cursor: pointer;">
+    <input type="file" id="add" multiple hidden (change)="setImg($event)">
+  </div>
+  </div>
+ </div>
+</section>
