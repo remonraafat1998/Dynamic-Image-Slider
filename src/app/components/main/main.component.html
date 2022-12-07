@@ -24,7 +24,7 @@
   <div class="add-img">
    <!-- add btn -->
   <div class="add-btn" >
-    <label for="add" class="btn btn-success" style="height:60px;">
+    <label for="add" class="btn btn-success" *ngIf="AllImg.length !== 5">
       <fa-icon [icon]="faPlus" *ngIf="AllImg.length < 5"></fa-icon>
     </label>
 

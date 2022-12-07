@@ -16,7 +16,7 @@ constructor()
 {}
 
 ngOnInit(): void {
-localStorage.setItem('img',JSON.stringify(this.AllImg))
+
 }
 
 // getAll image
